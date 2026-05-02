@@ -1,0 +1,57 @@
+{
+  "last_checked": "2026-05-02",
+  "status_note": "Affiliate links are not active yet. These are official program candidates for future application.",
+  "candidates": [
+    {
+      "name": "Semrush",
+      "category": "SEO / AI Visibility",
+      "fit": "AIツールやAPIを比較する読者は、AI検索可視性やSEO改善にも関心を持ちやすい。",
+      "program_summary": "公式ページでは、商品により販売報酬とトライアル報酬が提示されている。",
+      "commission_note": "$50-$300 per sale, $10 per trial on selected products.",
+      "source_url": "https://www.semrush.com/lp/affiliate-program/en/",
+      "application_status": "未申請"
+    },
+    {
+      "name": "Make",
+      "category": "Automation / No-code",
+      "fit": "AI APIを業務フローへ組み込む読者に、自動化ツールとして提案しやすい。",
+      "program_summary": "公式ページでは、紹介ユーザーから12か月間のコミッションが提示されている。",
+      "commission_note": "35% commission for 12 months.",
+      "source_url": "https://www.make.com/en/affiliate",
+      "application_status": "未申請"
+    },
+    {
+      "name": "HeyGen",
+      "category": "AI Video",
+      "fit": "画像・動画生成AIの費用比較ページを追加した後に関連導線を作れる。",
+      "program_summary": "公式ページでは、CreatorまたはTeamプランの有料顧客に対する継続報酬が提示されている。",
+      "commission_note": "20% recurring commission for 12 months.",
+      "source_url": "https://www.heygen.com/affiliate-program",
+      "application_status": "未申請"
+    },
+    {
+      "name": "Embeddable",
+      "category": "Developer / No-code Components",
+      "fit": "開発者やノーコード利用者向けの補助ツールとして掲載できる。",
+      "program_summary": "公式ページでは、紹介売上に対する継続報酬が提示されている。",
+      "commission_note": "30% recurring commission.",
+      "source_url": "https://embeddable.co/affiliates",
+      "application_status": "未申請"
+    },
+    {
+      "name": "Ofox AI",
+      "category": "AI API Aggregator",
+      "fit": "複数AIモデルを利用する開発者向けに、API利用コストの文脈で紹介しやすい。",
+      "program_summary": "公式ページでは、紹介ユーザーのAPI利用額に応じたコミッションが提示されている。",
+      "commission_note": "Up to 9% commission per API call.",
+      "source_url": "https://ofox.ai/en/partner",
+      "application_status": "未申請"
+    }
+  ],
+  "excluded": [
+    {
+      "name": "Zapier",
+      "reason": "通常ユーザー向けの公開アフィリエイトではなく、承認済みパートナー向けの紹介制度と見られるため初期候補から除外。"
+    }
+  ]
+}

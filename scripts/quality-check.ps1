@@ -6,10 +6,12 @@ $requiredFiles = @(
   "about.html",
   "disclaimer.html",
   "affiliate-disclosure.html",
+  "recommended-tools.html",
   "updates.html",
   "styles.css",
   "app.js",
   "data/pricing.json",
+  "data/affiliate-candidates.json",
   "README.md",
   "docs/operations.md",
   "docs/quality-check.md"
@@ -54,6 +56,25 @@ foreach ($model in $pricing.models) {
   foreach ($field in @("provider", "model", "input_per_million_usd", "output_per_million_usd", "source_url")) {
     if ($null -eq $model.$field -or $model.$field -eq "") {
       throw "pricing model is missing field '$field'"
+    }
+  }
+}
+
+$affiliatePath = Join-Path $root "data/affiliate-candidates.json"
+$affiliate = Get-Content $affiliatePath -Raw -Encoding UTF8 | ConvertFrom-Json
+
+if (-not $affiliate.last_checked) {
+  throw "affiliate-candidates.json must include last_checked"
+}
+
+if (-not $affiliate.candidates -or $affiliate.candidates.Count -lt 1) {
+  throw "affiliate-candidates.json must include at least one candidate"
+}
+
+foreach ($candidate in $affiliate.candidates) {
+  foreach ($field in @("name", "category", "source_url", "application_status")) {
+    if ($null -eq $candidate.$field -or $candidate.$field -eq "") {
+      throw "affiliate candidate is missing field '$field'"
     }
   }
 }

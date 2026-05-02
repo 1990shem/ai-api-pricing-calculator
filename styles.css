@@ -409,6 +409,61 @@ tbody tr:hover {
   margin-bottom: 8px;
 }
 
+.tool-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.tool-card {
+  display: grid;
+  gap: 12px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.tool-card span {
+  color: var(--accent-warm);
+  font-size: 0.78rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.tool-card h2,
+.tool-card p {
+  margin: 0;
+}
+
+.tool-card p,
+.tool-card dd {
+  color: var(--muted);
+}
+
+.tool-card dl {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+
+.tool-card dl div {
+  display: grid;
+  grid-template-columns: 86px minmax(0, 1fr);
+  gap: 10px;
+}
+
+.tool-card dt {
+  color: var(--ink);
+  font-weight: 850;
+}
+
+.tool-card dd {
+  margin: 0;
+}
+
 @media (max-width: 900px) {
   .hero-grid,
   .tool-layout,
@@ -445,5 +500,9 @@ tbody tr:hover {
 
   table {
     min-width: 680px;
+  }
+
+  .tool-card-grid {
+    grid-template-columns: 1fr;
   }
 }
