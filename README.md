@@ -44,7 +44,13 @@ E:\Codex\tools\node-v24.15.0-win-x64
 
 ## 公開方針
 
-初期公開は Cloudflare Pages を想定します。
+初期公開は Cloudflare Pages です。
+
+本番URL:
+
+```text
+https://ai-api-pricing-calculator.pages.dev/
+```
 
 1. GitHubにリポジトリを作成
 2. Cloudflare PagesでGitHubリポジトリを接続
