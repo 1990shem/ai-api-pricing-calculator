@@ -1,5 +1,13 @@
 const state = {
   models: [],
+  resultSort: {
+    key: "totalUsd",
+    direction: "asc",
+  },
+  pricingSort: {
+    key: "provider",
+    direction: "asc",
+  },
 };
 
 const fallbackPricing = {
@@ -91,6 +99,8 @@ const fields = {
   resultRows: document.querySelector("#resultRows"),
   pricingRows: document.querySelector("#pricingRows"),
   bestChoice: document.querySelector("#bestChoice"),
+  resultSortButtons: document.querySelectorAll("[data-result-sort]"),
+  pricingSortButtons: document.querySelectorAll("[data-pricing-sort]"),
 };
 
 function numberValue(input) {
@@ -129,13 +139,87 @@ function calculate(model) {
   };
 }
 
+function compareValues(a, b, direction) {
+  const modifier = direction === "desc" ? -1 : 1;
+
+  if (typeof a === "number" && typeof b === "number") {
+    return (a - b) * modifier;
+  }
+
+  return (
+    String(a ?? "").localeCompare(String(b ?? ""), "ja", {
+      numeric: true,
+      sensitivity: "base",
+    }) * modifier
+  );
+}
+
+function setSort(sortState, key) {
+  if (sortState.key === key) {
+    sortState.direction = sortState.direction === "asc" ? "desc" : "asc";
+    return;
+  }
+
+  sortState.key = key;
+  sortState.direction = "asc";
+}
+
+function updateSortButtons(buttons, activeState, dataName) {
+  buttons.forEach((button) => {
+    const key = button.dataset[dataName];
+    const isActive = key === activeState.key;
+    button.dataset.direction = isActive ? activeState.direction : "none";
+    button.setAttribute("aria-pressed", isActive ? "true" : "false");
+  });
+}
+
+function resultSortValue(row, key, usdJpy) {
+  switch (key) {
+    case "model":
+      return `${row.model.provider} ${row.model.model}`;
+    case "totalJpy":
+      return row.estimate.totalUsd * usdJpy;
+    case "inputCost":
+      return row.estimate.inputCost;
+    case "outputCost":
+      return row.estimate.outputCost;
+    case "totalUsd":
+    default:
+      return row.estimate.totalUsd;
+  }
+}
+
+function pricingSortValue(model, key) {
+  switch (key) {
+    case "model":
+      return model.model;
+    case "input":
+      return model.input_per_million_usd;
+    case "cachedInput":
+      return typeof model.cached_input_per_million_usd === "number"
+        ? model.cached_input_per_million_usd
+        : Number.POSITIVE_INFINITY;
+    case "output":
+      return model.output_per_million_usd;
+    case "provider":
+    default:
+      return model.provider;
+  }
+}
+
 function renderResults() {
   fields.cacheRateLabel.value = `${fields.cacheRate.value}%`;
   const usdJpy = numberValue(fields.usdJpy);
 
   const rows = state.models
     .map((model) => ({ model, estimate: calculate(model) }))
-    .sort((a, b) => a.estimate.totalUsd - b.estimate.totalUsd);
+    .sort((a, b) =>
+      compareValues(
+        resultSortValue(a, state.resultSort.key, usdJpy),
+        resultSortValue(b, state.resultSort.key, usdJpy),
+        state.resultSort.direction,
+      ),
+    );
 
   fields.resultRows.innerHTML = rows
     .map(({ model, estimate }) => {
@@ -152,12 +236,16 @@ function renderResults() {
     })
     .join("");
 
+  updateSortButtons(fields.resultSortButtons, state.resultSort, "resultSort");
+
   if (rows.length === 0) {
     fields.bestChoice.textContent = "比較できる価格データがありません。";
     return;
   }
 
-  const best = rows[0];
+  const best = rows.reduce((currentBest, row) =>
+    row.estimate.totalUsd < currentBest.estimate.totalUsd ? row : currentBest,
+  );
   fields.bestChoice.textContent = `この条件での最安候補は ${best.model.provider} ${best.model.model}、推定 ${formatterUsd.format(
     best.estimate.totalUsd,
   )}/月 です。`;
@@ -165,6 +253,14 @@ function renderResults() {
 
 function renderPricingTable() {
   fields.pricingRows.innerHTML = state.models
+    .slice()
+    .sort((a, b) =>
+      compareValues(
+        pricingSortValue(a, state.pricingSort.key),
+        pricingSortValue(b, state.pricingSort.key),
+        state.pricingSort.direction,
+      ),
+    )
     .map(
       (model) => `
         <tr>
@@ -182,6 +278,8 @@ function renderPricingTable() {
       `,
     )
     .join("");
+
+  updateSortButtons(fields.pricingSortButtons, state.pricingSort, "pricingSort");
 }
 
 async function init() {
@@ -204,6 +302,20 @@ async function init() {
 document.querySelectorAll("input").forEach((input) => {
   input.addEventListener("input", renderResults);
   input.addEventListener("change", renderResults);
+});
+
+fields.resultSortButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    setSort(state.resultSort, button.dataset.resultSort);
+    renderResults();
+  });
+});
+
+fields.pricingSortButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    setSort(state.pricingSort, button.dataset.pricingSort);
+    renderPricingTable();
+  });
 });
 
 init().catch((error) => {

@@ -14,7 +14,10 @@
   </head>
   <body>
     <header class="fixed-header">
-      <a class="brand" href="#top" aria-label="AI API Cost Guide">AI API Cost Guide</a>
+      <a class="brand" href="#top" aria-label="AI API Cost Guide">
+        <img src="./assets/ai-api-cost-guide-mark.svg" alt="" aria-hidden="true" />
+        <span>AI API Cost Guide</span>
+      </a>
       <nav class="top-nav" aria-label="主要ナビゲーション">
         <a href="#calculator">計算する</a>
         <a href="#comparison">料金を見る</a>
@@ -92,11 +95,11 @@
             <table>
               <thead>
                 <tr>
-                  <th>モデル</th>
-                  <th>月額USD</th>
-                  <th>月額JPY</th>
-                  <th>入力費用</th>
-                  <th>出力費用</th>
+                  <th><button class="sort-button" type="button" data-result-sort="model">モデル</button></th>
+                  <th><button class="sort-button" type="button" data-result-sort="totalUsd">月額USD</button></th>
+                  <th><button class="sort-button" type="button" data-result-sort="totalJpy">月額JPY</button></th>
+                  <th><button class="sort-button" type="button" data-result-sort="inputCost">入力費用</button></th>
+                  <th><button class="sort-button" type="button" data-result-sort="outputCost">出力費用</button></th>
                 </tr>
               </thead>
               <tbody id="resultRows"></tbody>
@@ -118,11 +121,11 @@
           <table>
             <thead>
               <tr>
-                <th>提供元</th>
-                <th>モデル</th>
-                <th>入力</th>
-                <th>キャッシュ入力</th>
-                <th>出力</th>
+                <th><button class="sort-button" type="button" data-pricing-sort="provider">提供元</button></th>
+                <th><button class="sort-button" type="button" data-pricing-sort="model">モデル</button></th>
+                <th><button class="sort-button" type="button" data-pricing-sort="input">入力</button></th>
+                <th><button class="sort-button" type="button" data-pricing-sort="cachedInput">キャッシュ入力</button></th>
+                <th><button class="sort-button" type="button" data-pricing-sort="output">出力</button></th>
                 <th>ソース</th>
               </tr>
             </thead>

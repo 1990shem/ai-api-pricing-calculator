@@ -14,6 +14,7 @@ $requiredFiles = @(
   "updates.html",
   "styles.css",
   "app.js",
+  "assets/ai-api-cost-guide-mark.svg",
   "data/pricing.json",
   "data/affiliate-candidates.json",
   "README.md",
@@ -36,7 +37,9 @@ $requiredHtml = @(
   'id="inputTokens"',
   'id="outputTokens"',
   'id="resultRows"',
-  'id="pricingRows"'
+  'id="pricingRows"',
+  'data-result-sort=',
+  'data-pricing-sort='
 )
 
 foreach ($marker in $requiredHtml) {

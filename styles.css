@@ -59,11 +59,21 @@ a {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   color: var(--ink);
   font-size: 0.98rem;
   font-weight: 850;
   text-decoration: none;
   white-space: nowrap;
+}
+
+.brand img {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgba(17, 24, 39, 0.12);
 }
 
 .top-nav {
@@ -289,6 +299,44 @@ th {
   font-size: 0.78rem;
   font-weight: 850;
   text-transform: uppercase;
+}
+
+.sort-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 30px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  letter-spacing: inherit;
+  text-align: left;
+  text-transform: inherit;
+}
+
+.sort-button::after {
+  width: 1em;
+  color: #8793a2;
+  content: "↕";
+  font-size: 0.82rem;
+}
+
+.sort-button[data-direction="asc"]::after {
+  color: var(--accent);
+  content: "↑";
+}
+
+.sort-button[data-direction="desc"]::after {
+  color: var(--accent);
+  content: "↓";
+}
+
+.sort-button:focus-visible {
+  outline: 3px solid rgba(8, 117, 104, 0.22);
+  outline-offset: 3px;
 }
 
 td {
@@ -530,6 +578,12 @@ tbody tr:hover {
     margin: 12px 0 0;
     overflow-x: auto;
     padding-bottom: 4px;
+  }
+
+  .brand img {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
   }
 
   .split-heading {

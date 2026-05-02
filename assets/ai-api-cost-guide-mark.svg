@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">AI API Cost Guide mark</title>
+  <desc id="desc">A compact mark combining an API bracket, comparison bars, and a cost signal.</desc>
+  <rect width="160" height="160" rx="34" fill="#111827"/>
+  <path d="M51 50 28 73l23 23" fill="none" stroke="#f8fafb" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m109 50 23 23-23 23" fill="none" stroke="#f8fafb" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M69 108 91 38" fill="none" stroke="#e7f4ef" stroke-width="12" stroke-linecap="round"/>
+  <rect x="56" y="90" width="12" height="24" rx="4" fill="#2f9a8d"/>
+  <rect x="74" y="76" width="12" height="38" rx="4" fill="#38b2a3"/>
+  <rect x="92" y="62" width="12" height="52" rx="4" fill="#f2b45c"/>
+  <circle cx="113" cy="47" r="12" fill="#a45612"/>
+</svg>
