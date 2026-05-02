@@ -9,7 +9,7 @@
       "program_summary": "公式ページでは、商品により販売報酬とトライアル報酬が提示されている。",
       "commission_note": "$50-$300 per sale, $10 per trial on selected products.",
       "source_url": "https://www.semrush.com/lp/affiliate-program/en/",
-      "application_status": "未申請"
+      "application_status": "申請中"
     },
     {
       "name": "Make",
@@ -17,8 +17,9 @@
       "fit": "AI APIを業務フローへ組み込む読者に、自動化ツールとして提案しやすい。",
       "program_summary": "公式ページでは、紹介ユーザーから12か月間のコミッションが提示されている。",
       "commission_note": "35% commission for 12 months.",
-      "source_url": "https://www.make.com/en/affiliate",
-      "application_status": "未申請"
+      "source_url": "https://www.make.com/en/register?pc=aiapicost",
+      "application_status": "承認済み",
+      "link_type": "affiliate"
     },
     {
       "name": "HeyGen",

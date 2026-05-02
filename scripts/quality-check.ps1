@@ -4,6 +4,7 @@ $root = Split-Path -Parent $PSScriptRoot
 $requiredFiles = @(
   "index.html",
   "about.html",
+  "privacy-policy.html",
   "disclaimer.html",
   "affiliate-disclosure.html",
   "recommended-tools.html",
@@ -77,6 +78,11 @@ foreach ($candidate in $affiliate.candidates) {
       throw "affiliate candidate is missing field '$field'"
     }
   }
+}
+
+$recommendedTools = Get-Content (Join-Path $root "recommended-tools.html") -Raw -Encoding UTF8
+if ($recommendedTools -like "*make.com/en/register?pc=aiapicost*" -and $recommendedTools -notlike "*rel=`"sponsored noreferrer`"*") {
+  throw "Make affiliate link must include rel=`"sponsored noreferrer`""
 }
 
 Write-Host "Quality check passed."
