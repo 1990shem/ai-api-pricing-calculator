@@ -1,0 +1,67 @@
+{
+  "last_checked": "2026-05-02",
+  "currency": "USD",
+  "unit": "per_1m_tokens",
+  "models": [
+    {
+      "provider": "OpenAI",
+      "model": "GPT-5.5",
+      "input_per_million_usd": 5,
+      "cached_input_per_million_usd": 0.5,
+      "output_per_million_usd": 30,
+      "batch_multiplier": 0.5,
+      "source_url": "https://openai.com/api/pricing/",
+      "notes": "Frontier coding and professional work model."
+    },
+    {
+      "provider": "OpenAI",
+      "model": "GPT-5.4 mini",
+      "input_per_million_usd": 0.75,
+      "cached_input_per_million_usd": 0.075,
+      "output_per_million_usd": 4.5,
+      "batch_multiplier": 0.5,
+      "source_url": "https://openai.com/api/pricing/",
+      "notes": "Lower-cost model for coding, computer use, and agents."
+    },
+    {
+      "provider": "Anthropic",
+      "model": "Claude Sonnet 4",
+      "input_per_million_usd": 3,
+      "cached_input_per_million_usd": 0.3,
+      "output_per_million_usd": 15,
+      "batch_multiplier": 1,
+      "source_url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+      "notes": "General-purpose Claude model."
+    },
+    {
+      "provider": "Anthropic",
+      "model": "Claude Haiku 3.5",
+      "input_per_million_usd": 0.8,
+      "cached_input_per_million_usd": 0.08,
+      "output_per_million_usd": 4,
+      "batch_multiplier": 1,
+      "source_url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+      "notes": "Lower-cost Claude model."
+    },
+    {
+      "provider": "Google",
+      "model": "Gemini 2.5 Flash-Lite",
+      "input_per_million_usd": 0.1,
+      "cached_input_per_million_usd": 0.025,
+      "output_per_million_usd": 0.4,
+      "batch_multiplier": 0.5,
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "notes": "Cost-effective Gemini model for scale."
+    },
+    {
+      "provider": "Google",
+      "model": "Gemini 2.5 Pro",
+      "input_per_million_usd": 1.25,
+      "cached_input_per_million_usd": 0.3125,
+      "output_per_million_usd": 5,
+      "batch_multiplier": 0.5,
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "notes": "Higher-intelligence Gemini model. Long-context pricing may differ."
+    }
+  ]
+}
