@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-05-02",
+  "last_checked": "2026-05-03",
   "currency": "USD",
   "unit": "per_1m_tokens",
   "models": [
@@ -58,10 +58,10 @@
       "model": "Gemini 2.5 Pro",
       "input_per_million_usd": 1.25,
       "cached_input_per_million_usd": 0.3125,
-      "output_per_million_usd": 5,
+      "output_per_million_usd": 10,
       "batch_multiplier": 0.5,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
-      "notes": "Higher-intelligence Gemini model. Long-context pricing may differ."
+      "notes": "Higher-intelligence Gemini model. Pricing shown for prompts up to 200k tokens. Long-context pricing may differ."
     }
   ]
 }

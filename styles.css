@@ -416,6 +416,35 @@ tbody tr:hover {
   margin-top: 22px;
 }
 
+.provider-link-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.provider-link-grid a {
+  display: grid;
+  gap: 6px;
+  min-height: 128px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fbfcfd;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.provider-link-grid a:hover {
+  border-color: #b7ddd5;
+  background: var(--surface-muted);
+}
+
+.provider-link-grid span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
 .tool-card {
   display: grid;
   gap: 12px;
@@ -512,6 +541,10 @@ tbody tr:hover {
   }
 
   .tool-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .provider-link-grid {
     grid-template-columns: 1fr;
   }
 }
