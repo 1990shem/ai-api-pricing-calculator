@@ -3,6 +3,10 @@ $ErrorActionPreference = "Stop"
 $root = Split-Path -Parent $PSScriptRoot
 $requiredFiles = @(
   "index.html",
+  "about.html",
+  "disclaimer.html",
+  "affiliate-disclosure.html",
+  "updates.html",
   "styles.css",
   "app.js",
   "data/pricing.json",
