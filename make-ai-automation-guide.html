@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MakeでAI APIを自動化する方法 | AI API Cost Guide</title>
+    <meta
+      name="description"
+      content="Makeを使ってAI APIの要約、分類、通知、レポート作成を自動化する活用例を紹介します。AI API費用を管理しながら業務フローを作る考え方を整理します。"
+    />
+    <link rel="canonical" href="https://ai-api-pricing-calculator.pages.dev/make-ai-automation-guide" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="fixed-header">
+      <a class="brand" href="./">
+        <img src="./assets/ai-api-cost-guide-mark.svg" alt="" aria-hidden="true" />
+        <span>AI API Cost Guide</span>
+      </a>
+      <nav class="top-nav" aria-label="主要ナビゲーション">
+        <a href="./#calculator">計算する</a>
+        <a href="./#comparison">料金を見る</a>
+        <a href="./#method">算出方法</a>
+        <a href="./#guides">ガイド</a>
+        <a href="./recommended-tools">周辺ツール</a>
+        <a href="./updates">更新履歴</a>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero">
+        <p class="eyebrow">Automation Guide</p>
+        <h1>MakeでAI APIを自動化する方法</h1>
+        <p class="lead">
+          AI APIの費用を計算した後は、実際の業務フローに組み込む段階です。Makeを使うと、メール、シート、Notion、Slack、APIをつないでAI処理を自動化できます。
+        </p>
+      </section>
+
+      <section class="content-section prose">
+        <h2>Makeが向いているAI自動化</h2>
+        <p>
+          Makeは、毎日または毎週くり返す作業を自動化する用途に向いています。たとえば問い合わせ内容の分類、議事録の要約、記事案の生成、レポート通知などです。
+          コードを書かずに複数サービスをつなげるため、小さく試してから運用フローへ広げやすい点が強みです。
+        </p>
+
+        <h2>よくある活用例</h2>
+        <ul class="tool-points">
+          <li>Gmailで受けた問い合わせをAIで分類し、Google Sheetsへ保存する</li>
+          <li>Notionに追加したメモをAIで要約し、Slackへ通知する</li>
+          <li>Webフォームの回答から営業用の返信案を生成する</li>
+          <li>API利用量やコストのログを定期的に集計する</li>
+          <li>記事タイトル案、SNS投稿案、FAQ案をまとめて生成する</li>
+        </ul>
+
+        <h2>費用を抑える設計</h2>
+        <p>
+          自動化は便利ですが、実行回数が増えるとAI API費用も増えます。最初は実行頻度を低めにし、入力テキストを短くし、安いモデルで十分な処理と上位モデルが必要な処理を分けます。
+          即時処理が不要なものはBatch処理を検討し、月額費用は <a href="./#calculator">AI API月額費用計算機</a> で定期的に見直します。
+        </p>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading">
+          <p class="eyebrow">Next Step</p>
+          <h2>まずは小さい自動化から試す</h2>
+          <p>
+            最初は「1つの入力をAIで処理して、1つの場所へ保存する」だけで十分です。動いた後に通知、分類、承認フローを足していくと失敗しにくくなります。
+          </p>
+        </div>
+        <p class="affiliate-note">広告リンクです。このリンク経由で登録または購入が発生した場合、運営者が報酬を受け取ることがあります。</p>
+        <a class="button primary" href="https://www.make.com/en/register?pc=aiapicost" target="_blank" rel="sponsored noreferrer">Makeを試す</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <nav class="footer-links" aria-label="補足ページ">
+        <a href="./ai-api-cost-optimization">AI APIコスト削減ガイド</a>
+        <a href="./recommended-tools">おすすめ周辺ツール</a>
+        <a href="./affiliate-disclosure">広告・アフィリエイト開示</a>
+      </nav>
+    </footer>
+  </body>
+</html>

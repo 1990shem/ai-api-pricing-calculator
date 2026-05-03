@@ -13,6 +13,7 @@ $requiredFiles = @(
   "gemini-pricing.html",
   "llm-api-cost-comparison-guide.html",
   "ai-api-cost-optimization.html",
+  "make-ai-automation-guide.html",
   "updates.html",
   "styles.css",
   "app.js",

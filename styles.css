@@ -155,6 +155,12 @@ h2 {
   margin-top: 28px;
 }
 
+.button-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .button.primary {
   border: 1px solid var(--accent);
   background: var(--accent);
