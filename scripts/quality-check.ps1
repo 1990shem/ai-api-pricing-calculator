@@ -23,6 +23,7 @@ $requiredFiles = @(
   "sitemap.xml",
   "sitemap.txt",
   "robots.txt",
+  "_headers",
   "README.md",
   "docs/operations.md",
   "docs/quality-check.md"
@@ -109,12 +110,19 @@ if ($sitemap -like "*.html*") {
 
 $sitemapText = Get-Content (Join-Path $root "sitemap.txt") -Raw -Encoding UTF8
 $robots = Get-Content (Join-Path $root "robots.txt") -Raw -Encoding UTF8
+$headers = Get-Content (Join-Path $root "_headers") -Raw -Encoding UTF8
 if ($robots -notlike "*https://ai-api-pricing-calculator.pages.dev/sitemap.xml*") {
   throw "robots.txt must reference sitemap.xml"
 }
 
 if ($robots -notlike "*https://ai-api-pricing-calculator.pages.dev/sitemap.txt*") {
   throw "robots.txt must reference sitemap.txt"
+}
+
+foreach ($headerMarker in @("/sitemap.xml", "Content-Type: application/xml; charset=utf-8", "/sitemap.txt", "Content-Type: text/plain; charset=utf-8")) {
+  if ($headers -notlike "*$headerMarker*") {
+    throw "_headers is missing marker: $headerMarker"
+  }
 }
 
 $htmlFiles = Get-ChildItem $root -Filter "*.html" | Where-Object { $_.Name -ne "index.html" }
