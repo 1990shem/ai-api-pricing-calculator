@@ -8,9 +8,67 @@
       name="description"
       content="OpenAI、Anthropic、GeminiなどのAI API料金を比較し、月間利用量から概算コストを計算します。公式ソースと更新日を明示します。"
     />
+    <link rel="canonical" href="https://ai-api-pricing-calculator.pages.dev/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="AI API料金比較と月額費用計算機" />
+    <meta
+      property="og:description"
+      content="OpenAI、Anthropic、GeminiなどのAI API料金を比較し、利用量から月額費用を概算します。"
+    />
+    <meta property="og:url" content="https://ai-api-pricing-calculator.pages.dev/" />
+    <meta property="og:image" content="https://ai-api-pricing-calculator.pages.dev/assets/ai-api-cost-guide-logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="impact-site-verification" value="452c5a01-4a11-47ab-8c97-a562c128f792" />
     <meta name="google-site-verification" content="xUF_R1zpGLq4dV51Rhx4Gs9H0t5Xol-Hq1YGKc2wMKI" />
     <link rel="stylesheet" href="./styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI API Cost Guide",
+        "url": "https://ai-api-pricing-calculator.pages.dev/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "AI APIの料金を比較し、利用量から月額費用を概算する計算ツールです。",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "JPY"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "AI API料金は何で大きく変わりますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "主に入力トークン数、出力トークン数、利用モデル、キャッシュ利用率、Batch割引の有無で変わります。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "安いモデルを選べば十分ですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "単純な分類、抽出、短い要約では低価格モデルが有利です。複雑な推論やコード生成では再試行回数まで含めて判断します。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "この計算結果は請求額と一致しますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "概算です。実際の請求額は最新料金、無料枠、税、為替、長文コンテキスト、画像・音声などの追加料金で変わります。"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <header class="fixed-header">
@@ -22,6 +80,7 @@
         <a href="#calculator">計算する</a>
         <a href="#comparison">料金を見る</a>
         <a href="#method">算出方法</a>
+        <a href="#guides">ガイド</a>
         <a href="./recommended-tools.html">周辺ツール</a>
         <a href="./updates.html">更新履歴</a>
       </nav>
@@ -153,6 +212,49 @@
             <strong>Gemini API料金</strong>
             <span>Gemini 2.5 Flash-Lite、Gemini 2.5 Proの料金</span>
           </a>
+        </div>
+      </section>
+
+      <section id="guides" class="content-section">
+        <div class="section-heading">
+          <p class="eyebrow">Guides</p>
+          <h2>AI API運用ガイド</h2>
+          <p>検索流入と実務利用を増やすため、料金比較だけでなく、選び方とコスト削減の判断材料を整理しています。</p>
+        </div>
+        <div class="provider-link-grid">
+          <a href="./llm-api-cost-comparison-guide.html">
+            <strong>LLM API料金比較の見方</strong>
+            <span>入力、出力、キャッシュ、Batchを同じ条件で比較する手順</span>
+          </a>
+          <a href="./ai-api-cost-optimization.html">
+            <strong>AI APIコスト削減ガイド</strong>
+            <span>キャッシュ、モデル選定、Batch処理で月額費用を抑える考え方</span>
+          </a>
+          <a href="./recommended-tools.html">
+            <strong>自動化・分析ツール候補</strong>
+            <span>API運用、SEO、業務自動化に使える周辺ツール</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading">
+          <p class="eyebrow">FAQ</p>
+          <h2>よくある質問</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>AI API料金は何で大きく変わりますか？</summary>
+            <p>主に入力トークン数、出力トークン数、利用モデル、キャッシュ利用率、Batch割引の有無で変わります。特に出力単価が高いモデルでは、長い回答を生成する設計ほど月額費用が増えます。</p>
+          </details>
+          <details>
+            <summary>安いモデルを選べば十分ですか？</summary>
+            <p>単純な分類、抽出、短い要約では低価格モデルが有利です。一方、複雑な推論やコード生成では、失敗率や再試行回数まで含めると上位モデルの方が安くなる場合があります。</p>
+          </details>
+          <details>
+            <summary>この計算結果は請求額と一致しますか？</summary>
+            <p>概算です。実際の請求額は各社の最新料金、無料枠、税、為替、長文コンテキスト、画像・音声などの追加料金で変わります。最終判断前には公式価格ページを確認してください。</p>
+          </details>
         </div>
       </section>
 

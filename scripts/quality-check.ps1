@@ -11,6 +11,8 @@ $requiredFiles = @(
   "openai-pricing.html",
   "claude-pricing.html",
   "gemini-pricing.html",
+  "llm-api-cost-comparison-guide.html",
+  "ai-api-cost-optimization.html",
   "updates.html",
   "styles.css",
   "app.js",
@@ -38,6 +40,7 @@ $requiredHtml = @(
   'id="outputTokens"',
   'id="resultRows"',
   'id="pricingRows"',
+  'id="guides"',
   'data-result-sort=',
   'data-pricing-sort='
 )
