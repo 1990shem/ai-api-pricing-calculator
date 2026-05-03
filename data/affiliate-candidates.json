@@ -1,6 +1,6 @@
 {
-  "last_checked": "2026-05-02",
-  "status_note": "Affiliate links are not active yet. These are official program candidates for future application.",
+  "last_checked": "2026-05-03",
+  "status_note": "Approved affiliate links are active for Make and Embeddable. Other tools are candidates or pending applications.",
   "candidates": [
     {
       "name": "Semrush",
@@ -36,8 +36,9 @@
       "fit": "開発者やノーコード利用者向けの補助ツールとして掲載できる。",
       "program_summary": "公式ページでは、紹介売上に対する継続報酬が提示されている。",
       "commission_note": "30% recurring commission.",
-      "source_url": "https://embeddable.co/affiliates",
-      "application_status": "未申請"
+      "source_url": "https://embeddable.co/?via=shogo",
+      "application_status": "承認済み",
+      "link_type": "affiliate"
     },
     {
       "name": "Ofox AI",

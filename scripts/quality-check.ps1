@@ -94,4 +94,8 @@ if ($recommendedTools -like "*make.com/en/register?pc=aiapicost*" -and $recommen
   throw "Make affiliate link must include rel=`"sponsored noreferrer`""
 }
 
+if ($recommendedTools -like "*embeddable.co/?via=shogo*" -and $recommendedTools -notlike "*rel=`"sponsored noreferrer`"*") {
+  throw "Embeddable affiliate link must include rel=`"sponsored noreferrer`""
+}
+
 Write-Host "Quality check passed."
