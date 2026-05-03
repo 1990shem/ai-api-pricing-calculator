@@ -98,4 +98,32 @@ if ($recommendedTools -like "*embeddable.co/?via=shogo*" -and $recommendedTools 
   throw "Embeddable affiliate link must include rel=`"sponsored noreferrer`""
 }
 
+$sitemap = Get-Content (Join-Path $root "sitemap.xml") -Raw -Encoding UTF8
+if ($sitemap -like "*.html*") {
+  throw "sitemap.xml should use canonical extensionless URLs, not .html URLs"
+}
+
+$htmlFiles = Get-ChildItem $root -Filter "*.html" | Where-Object { $_.Name -ne "index.html" }
+foreach ($file in $htmlFiles) {
+  $slug = [System.IO.Path]::GetFileNameWithoutExtension($file.Name)
+  $canonicalUrl = "https://ai-api-pricing-calculator.pages.dev/$slug"
+  $content = Get-Content $file.FullName -Raw -Encoding UTF8
+
+  if ($sitemap -notlike "*<loc>$canonicalUrl</loc>*") {
+    throw "sitemap.xml is missing canonical URL for $($file.Name): $canonicalUrl"
+  }
+
+  if ($content -notlike "*rel=`"canonical`" href=`"$canonicalUrl`"*") {
+    throw "$($file.Name) must include canonical URL: $canonicalUrl"
+  }
+}
+
+$allHtmlFiles = Get-ChildItem $root -Filter "*.html"
+foreach ($file in $allHtmlFiles) {
+  $content = Get-Content $file.FullName -Raw -Encoding UTF8
+  if ($content -match 'href="\./[^"]+\.html') {
+    throw "$($file.Name) should link to canonical extensionless internal URLs"
+  }
+}
+
 Write-Host "Quality check passed."

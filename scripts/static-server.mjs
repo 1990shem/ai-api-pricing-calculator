@@ -21,6 +21,9 @@ function resolvePath(urlPath) {
   if (existsSync(target) && statSync(target).isDirectory()) {
     return join(target, "index.html");
   }
+  if (!existsSync(target) && !extname(target)) {
+    return `${target}.html`;
+  }
   return target;
 }
 
