@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://ai-api-pricing-calculator.pages.dev/sitemap.xml
+Sitemap: https://ai-api-pricing-calculator.pages.dev/sitemap.txt

@@ -20,6 +20,9 @@ $requiredFiles = @(
   "assets/ai-api-cost-guide-mark.svg",
   "data/pricing.json",
   "data/affiliate-candidates.json",
+  "sitemap.xml",
+  "sitemap.txt",
+  "robots.txt",
   "README.md",
   "docs/operations.md",
   "docs/quality-check.md"
@@ -104,6 +107,16 @@ if ($sitemap -like "*.html*") {
   throw "sitemap.xml should use canonical extensionless URLs, not .html URLs"
 }
 
+$sitemapText = Get-Content (Join-Path $root "sitemap.txt") -Raw -Encoding UTF8
+$robots = Get-Content (Join-Path $root "robots.txt") -Raw -Encoding UTF8
+if ($robots -notlike "*https://ai-api-pricing-calculator.pages.dev/sitemap.xml*") {
+  throw "robots.txt must reference sitemap.xml"
+}
+
+if ($robots -notlike "*https://ai-api-pricing-calculator.pages.dev/sitemap.txt*") {
+  throw "robots.txt must reference sitemap.txt"
+}
+
 $htmlFiles = Get-ChildItem $root -Filter "*.html" | Where-Object { $_.Name -ne "index.html" }
 foreach ($file in $htmlFiles) {
   $slug = [System.IO.Path]::GetFileNameWithoutExtension($file.Name)
@@ -112,6 +125,10 @@ foreach ($file in $htmlFiles) {
 
   if ($sitemap -notlike "*<loc>$canonicalUrl</loc>*") {
     throw "sitemap.xml is missing canonical URL for $($file.Name): $canonicalUrl"
+  }
+
+  if ($sitemapText -notlike "*$canonicalUrl*") {
+    throw "sitemap.txt is missing canonical URL for $($file.Name): $canonicalUrl"
   }
 
   if ($content -notlike "*rel=`"canonical`" href=`"$canonicalUrl`"*") {
