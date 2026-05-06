@@ -103,6 +103,10 @@ if ($recommendedTools -like "*embeddable.co/?via=shogo*" -and $recommendedTools 
   throw "Embeddable affiliate link must include rel=`"sponsored noreferrer`""
 }
 
+if ($recommendedTools -like "*ofox.ai/x/aiapicost*" -and $recommendedTools -notlike "*rel=`"sponsored noreferrer`"*") {
+  throw "Ofox AI affiliate link must include rel=`"sponsored noreferrer`""
+}
+
 $sitemap = Get-Content (Join-Path $root "sitemap.xml") -Raw -Encoding UTF8
 if ($sitemap -like "*.html*") {
   throw "sitemap.xml should use canonical extensionless URLs, not .html URLs"

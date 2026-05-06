@@ -1,12 +1,12 @@
 {
-  "last_checked": "2026-05-03",
-  "status_note": "Approved affiliate links are active for Make and Embeddable. Other tools are candidates or pending applications.",
+  "last_checked": "2026-05-06",
+  "status_note": "Approved affiliate links are active for Make, Embeddable, and Ofox AI. Semrush is under review. Other tools are candidates or pending applications.",
   "candidates": [
     {
       "name": "Semrush",
       "category": "SEO / AI Visibility",
-      "fit": "AIツールやAPIを比較する読者は、AI検索可視性やSEO改善にも関心を持ちやすい。",
-      "program_summary": "公式ページでは、商品により販売報酬とトライアル報酬が提示されている。",
+      "fit": "AIツールやAPI比較を読むユーザーは、検索流入やAI検索での可視性にも関心を持ちやすい。",
+      "program_summary": "公式ページでは、商品販売やトライアルに応じた報酬が示されている。",
       "commission_note": "$50-$300 per sale, $10 per trial on selected products.",
       "source_url": "https://www.semrush.com/lp/affiliate-program/en/",
       "application_status": "申請中"
@@ -15,7 +15,7 @@
       "name": "Make",
       "category": "Automation / No-code",
       "fit": "AI APIを業務フローへ組み込む読者に、自動化ツールとして提案しやすい。",
-      "program_summary": "公式ページでは、紹介ユーザーから12か月間のコミッションが提示されている。",
+      "program_summary": "紹介ユーザーから12カ月間のコミッションが示されている。",
       "commission_note": "35% commission for 12 months.",
       "source_url": "https://www.make.com/en/register?pc=aiapicost",
       "application_status": "承認済み",
@@ -25,16 +25,16 @@
       "name": "HeyGen",
       "category": "AI Video",
       "fit": "画像・動画生成AIの費用比較ページを追加した後に関連導線を作れる。",
-      "program_summary": "公式ページでは、CreatorまたはTeamプランの有料顧客に対する継続報酬が提示されている。",
+      "program_summary": "公式ページでは、CreatorまたはTeamプランの有料顧客に対する継続報酬が示されている。",
       "commission_note": "20% recurring commission for 12 months.",
       "source_url": "https://www.heygen.com/affiliate-program",
-      "application_status": "未申請"
+      "application_status": "申請検討中"
     },
     {
       "name": "Embeddable",
       "category": "Developer / No-code Components",
       "fit": "開発者やノーコード利用者向けの補助ツールとして掲載できる。",
-      "program_summary": "公式ページでは、紹介売上に対する継続報酬が提示されている。",
+      "program_summary": "公式ページでは、紹介売上に対する継続報酬が示されている。",
       "commission_note": "30% recurring commission.",
       "source_url": "https://embeddable.co/?via=shogo",
       "application_status": "承認済み",
@@ -43,17 +43,26 @@
     {
       "name": "Ofox AI",
       "category": "AI API Aggregator",
-      "fit": "複数AIモデルを利用する開発者向けに、API利用コストの文脈で紹介しやすい。",
-      "program_summary": "公式ページでは、紹介ユーザーのAPI利用額に応じたコミッションが提示されている。",
-      "commission_note": "Up to 9% commission per API call.",
-      "source_url": "https://ofox.ai/en/partner",
-      "application_status": "未申請"
+      "fit": "複数AIモデルを比較・利用したい開発者向けに、AI API比較の文脈で紹介しやすい。",
+      "program_summary": "ダッシュボード上では現在の報酬レベルがT1、コミッション3%として表示されている。",
+      "commission_note": "T1 commission 3%; registration page mentions up to 9%.",
+      "source_url": "https://ofox.ai/x/aiapicost",
+      "application_status": "承認済み",
+      "link_type": "affiliate"
     }
   ],
   "excluded": [
     {
       "name": "Zapier",
       "reason": "通常ユーザー向けの公開アフィリエイトではなく、承認済みパートナー向けの紹介制度と見られるため初期候補から除外。"
+    },
+    {
+      "name": "Promeed",
+      "reason": "健康・美容商品の訴求は現在のAI API比較サイトとテーマのずれが大きく、信頼性リスクが高いため除外。"
+    },
+    {
+      "name": "Vista Social",
+      "reason": "SNS運用SaaSとして関連性はあるが、英語での打ち合わせ・個別協議が必要なため現時点では見送り。"
     }
   ]
 }
